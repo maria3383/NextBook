@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Book - Recomendações</title>
+<style>
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #faf8fc;
+    margin: 0;
+    color: #333;
+  }
+
+  header {
+    background-color: #4b237a;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+  }
+
+  header p {
+    font-size: 1em;
+    opacity: 0.8;
+  }
+
+  .book-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .book-card {
+    width: 320px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 2px solid #ddd;
+  }
+
+  .book-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+  }
+
+  .book-content {
+    padding: 15px;
+  }
+
+  .section-title {
+    background-color: #45246e;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+  }
+
+  .book-content p {
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+
+  footer {
+    background-color: #4b237a;
+    color: white;
+    padding: 40px;
+    text-align: center;
+  }
+
+  footer h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  footer p {
+    font-size: 1.1em;
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Next Book</h1>
+  <p>Histórias para levar você a outro mundo.</p>
+</header>
+
+<section class="book-container" id="bookContainer">
+  <!-- Os livros serão gerados automaticamente aqui -->
+</section>
+
+<footer>
+  <h2>Próxima leitura te espera</h2>
+  <p>Descubra histórias de fantasia, amor, guerra e coragem.</p>
+</footer>
+
+<script>
+const genres = ["Fantasia", "Romance", "Ficção", "Guerra"];
+const titles = [
+  "Corte de Espinhos e Rosas", "A Canção de Aquiles", "O Nome do Vento",
+  "Sombra e Ossos", "A Filha do Guardião do Fogo", "O Príncipe Cruel",
+  "Trono de Vidro", "Coração de Tinta", "O Poder da Esperança", 
+  "O Império das Tormentas", "Rainha Vermelha", "O Feiticeiro de Terramar"
+];
+const images = [
+  "https://m.media-amazon.com/images/I/81eM2u8s6XL.jpg",
+  "https://m.media-amazon.com/images/I/81h2gWPTYJL.jpg",
+  "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg",
+  "https://m.media-amazon.com/images/I/81Wc4lAfLxL.jpg",
+  "https://m.media-amazon.com/images/I/71wY3X5tTjL.jpg",
+  "https://m.media-amazon.com/images/I/81VStYnDGrL.jpg"
+];
+
+function randomItem(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function createBookCard(id) {
+  const title = randomItem(titles);
+  const genre = randomItem(genres);
+  const img = randomItem(images);
+  const price = (Math.random() * (80 - 30) + 30).toFixed(2);
+
+  return `
+  <div class="book-card">
+    <img src="${img}" alt="${title}">
+    <div class="book-content">
+      <div class="section-title">resumo</div>
+      <p>${title} mistura elementos de ${genre.toLowerCase()} com emoções profundas, explorando temas de amor, coragem e destino.</p>
+      <div class="section-title">faixa etária de idade</div>
+      <p>Recomendado para público +14. Ideal para adolescentes e jovens adultos.</p>
+      <div class="section-title">preço de mercado</div>
+      <p>Disponível a partir de <strong>R$ ${price}</strong> nas principais lojas online.</p>
+    </div>
+  </div>
+  `;
+}
+
+const container = document.getElementById("bookContainer");
+let html = "";
+for (let i = 1; i <= 5000; i++) {
+  html += createBookCard(i);
+}
+container.innerHTML = html;
+</script>
+
+</body>
+</html>
