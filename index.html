@@ -101,52 +101,7 @@
   <!-- Os livros serão gerados automaticamente aqui -->
 </section>
 
-<footer>
   <h2>Próxima leitura te espera</h2>
   <p>Descubra histórias de outro mundo<p> 
-# Creating a self-contained single HTML file with embedded JSON for ~400 books.
-# The file will be saved to /mnt/data/books_site.html and a download link will be shown after creation.
-# The generated site includes search, filters (genre, age), pagination, and a card layout inspired by the provided slide.
-import json
-from pathlib import Path
-out_path = Path("/mnt/data/books_site.html")
 
-# Generate 400 sample books with varied genres: Fiction (ficção), Fantasy (fantasia), Romance, Terror
-genres = ["Ficção", "Fantasia", "Romance", "Terror"]
-authors = ["Ana Silva", "Bruno Costa", "Carla Nunes", "Daniel Rocha", "Eduarda Lima", "Felipe Araujo", 
-           "Gabriela Moura", "Henrique Dias", "Isabela Pinto", "João Marques"]
-summaries = [
-    "Uma narrativa envolvente sobre escolhas, perdas e recomeços.",
-    "Conflitos sobrenaturais e um passado que volta para assombrar.",
-    "Um romance moderno que explora identidades e segredos familiares.",
-    "Aventura épica, reinos em disputa e heróis relutantes.",
-    "Um suspense psicológico que desvenda a linha entre real e imaginário.",
-    "Histórias interligadas de amor, traição e redenção.",
-    "Um mergulho em mundos mágicos e tradições ancestrais.",
-    "Mistério crescente, reviravoltas e um desfecho inesperado.",
-    "Personagens complexos em cenários urbanos e sombrios.",
-    "Paixão proibida e conflitos que atravessam gerações."
-]
-
-books = []
-for i in range(1, 401):
-    genre = genres[(i-1) % len(genres)]
-    title = f"{genre} - Título Exemplar {i}"
-    author = authors[(i-1) % len(authors)]
-    summary = summaries[i % len(summaries)]
-    # add some small variation
-    summary_full = f"{summary} ({genre.lower()}) Este é o exemplar número {i}."
-    age = "+14" if genre != "Romance" else "+12"
-    price = round(20 + (i * 0.37) % 100, 2)  # pseudo-random price
-    cover = f"https://via.placeholder.com/220x320.png?text=Cover+{i}"
-    books.append({
-        "id": i,
-        "title": title,
-        "author": author,
-        "genre": genre,
-        "summary": summary_full,
-        "age": age,
-        "price": f"R$ {price:.2f}",
-        "cover": cover
-    })
-  </body>
+</body>
