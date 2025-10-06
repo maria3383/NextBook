@@ -1,119 +1,57 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Next Book - Recomendações</title>
-<style>
-  body {
-    font-family: "Segoe UI", sans-serif;
-    background-color: #faf8fc;
-    margin: 0;
-    color: #333;
-  }
-
-  header {
-    background-color: #4b237a;
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-  }
-
-  header h1 {
-    font-size: 2.2em;
-    margin-bottom: 5px;
-  }
-
-  header p {
-    font-size: 1em;
-    opacity: 0.8;
-  }
-
-  .book-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px;
-  }
-
-  .book-card {
-    width: 320px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    overflow: hidden;
-    border: 2px solid #ddd;
-  }
-
-  .book-card img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-  }
-
-  .book-content {
-    padding: 15px;
-  }
-
-  .section-title {
-    background-color: #45246e;
-    color: white;
-    padding: 6px 10px;
-    border-radius: 3px;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 0.9em;
-    margin-bottom: 8px;
-  }
-
-.divinos-img {
-  display: block;
-  margin: 30px auto;
-  max-width: 80%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f2f8;
+  color: #2c2c2c;
 }
 
+header {
+  background-color: #4b1b78;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
 
-  .book-content p {
-    font-size: 0.9em;
-    line-height: 1.5;
-  }
+main {
+  padding: 2rem;
+  text-align: center;
+}
 
-  footer {
-    background-color: #4b237a;
-    color: white;
-    padding: 40px;
-    text-align: center;
-  }
+.intro h2 {
+  color: #4b1b78;
+  margin-bottom: 0.5rem;
+}
 
-  footer h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
+.intro p {
+  color: #444;
+  margin-bottom: 1rem;
+}
 
-  footer p {
-    font-size: 1.1em;
-    opacity: 0.9;
-  }
-</style>
-</head>
-<body>
+a {
+  color: #4b1b78;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-<header>
-  <h1>Next Book</h1>
-  <p>Histórias para levar você a outro mundo.</p>
-</header>
+a:hover {
+  text-decoration: underline;
+}
 
-<section class="book-container" id="bookContainer">
-  <!-- Os livros serão gerados automaticamente aqui -->
-</section>
+/* Imagem estilizada */
+.divinos-img {
+  display: block;
+  margin: 2rem auto;
+  max-width: 60%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
 
-  <h2>Próxima leitura te espera</h2>
-  <p>Descubra histórias de outro mundo<p> 
-
-</body> 
-  
-  
+footer {
+  text-align: center;
+  background-color: #4b1b78;
+  color: white;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
