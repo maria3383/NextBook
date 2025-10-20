@@ -1,73 +1,87 @@
-/* Reset e fonte */
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f2f8;
-  color: #2c2c2c;
-}
-
-/* 🔹 Cabeçalho roxo */
-.header-banner {
-  background-color: #4b1b78;
-  color: #ffffff;
-  text-align: center;
-  padding: 2.5rem 1rem;
-}
-
-.header-banner h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.3rem;
-}
-
-.header-banner p {
-  font-size: 1rem;
-  opacity: 0.9;
   margin: 0;
+  background-color: #f4f4f9;
+  color: #333;
 }
 
-/* 🔹 Conteúdo */
-main {
-  padding: 2rem;
-  text-align: center;
+header {
+  background-color: #2b2d7f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
 }
 
-.intro h2 {
-  color: #4b1b78;
-  margin-bottom: 0.5rem;
-}
-
-.intro p {
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-/* 🔹 Link */
-a {
-  color: #4b1b78;
+nav a {
+  color: white;
+  margin: 0 20px;
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
-a:hover {
-  text-decoration: underline;
+nav a:hover {
+  color: #ffd700;
 }
 
-/* 🔹 Imagem */
-.divinos.png {
+section {
+  display: none;
+  padding: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section.active {
   display: block;
-  margin: 2rem auto;
-  max-width: 60%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* 🔹 Rodapé */
+.livro-img {
+  width: 250px;
+  float: left;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.titulo {
+  color: #2b2d7f;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-left: 6px solid #2b2d7f;
+  padding-left: 10px;
+  margin-top: 20px;
+}
+
+ul {
+  line-height: 1.8;
+}
+
 footer {
   text-align: center;
-  background-color: #4b1b78;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #2b2d7f;
   color: white;
-  padding: 1rem;
-  margin-top: 3rem;
-  font-size: 0.9rem;
+  font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+  .livro-img {
+    width: 100%;
+    float: none;
+    margin: 0 0 20px 0;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+
+  section {
+    padding: 15px;
+  }
 }
