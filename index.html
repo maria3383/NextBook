@@ -3,30 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Next Book</title>
+  <title>Recomendações de Livros</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Cabeçalho roxo -->
-  <header class="header-banner">
-    <h1>Next Book</h1>
-    <p>Histórias para levar você a outro mundo.</p>
+  <header>
+    <nav>
+      <a onclick="showTab('ficcao')">Ficção</a>
+      <a onclick="showTab('fantasia')">Fantasia</a>
+      <a onclick="showTab('romance')">Romance</a>
+      <a onclick="showTab('terror')">Terror</a>
+    </nav>
   </header>
 
   <main>
-    <section class="intro">
-      <h2>Próxima leitura te espera</h2>
-      <p>Descubra histórias de outro mundo</p>
+    <!-- FICÇÃO -->
+    <section id="ficcao" class="active">
+      <h2 class="titulo">Divinos Rivais — Rebecca Ross</h2>
+      <img src="https://m.media-amazon.com/images/I/81lwHn-RRJL._AC_UF1000,1000_QL80_.jpg" alt="Capa do livro Divinos Rivais" class="livro-img">
+      <p><strong>Resumo:</strong> O livro <em>Divinos Rivais</em> mistura fantasia, romance e guerra. A trama acompanha Iris Winnow, uma jovem jornalista que lida com dificuldades financeiras após a morte do pai e a ausência do irmão, convocado para lutar em uma guerra entre deuses. Iris encontra conforto escrevendo cartas, que misteriosamente chegam ao seu rival Roman Kitt. O que começa como uma troca anônima se transforma em uma conexão profunda e mágica, em meio ao caos de um mundo marcado por divindades, conflitos e esperança.</p>
+      <h3 class="titulo">Faixa Etária</h3>
+      <p>📖 Indicada para o público +14 anos, por abordar guerra, luto e romance, sem descrições extremas. Ideal para adolescentes e jovens adultos.</p>
+      <h3 class="titulo">Preço de Mercado</h3>
+      <ul>
+        <li>Mercado Livre: a partir de R$ 42,33</li>
+        <li>Buscapé: ofertas de cerca de R$ 34,90</li>
+        <li>Box duologia (completa): cerca de R$ 154,51</li>
+      </ul>
+    </section>
 
-      <img src="Divinos.png" alt="Capa do livro Divinos Rivais">
-      >
+    <!-- FANTASIA -->
+    <section id="fantasia">
+      <h2 class="titulo">Livros de Fantasia</h2>
+      <p>Explore mundos mágicos e épicos — perfeitos para quem ama batalhas, deuses e aventuras inesquecíveis.</p>
+      <ul>
+        <li><strong>O Nome do Vento</strong> — Patrick Rothfuss</li>
+        <li><strong>Trono de Vidro</strong> — Sarah J. Maas</li>
+        <li><strong>Sombra e Ossos</strong> — Leigh Bardugo</li>
+      </ul>
+    </section>
+
+    <!-- ROMANCE -->
+    <section id="romance">
+      <h2 class="titulo">Livros de Romance</h2>
+      <ul>
+        <li><strong>Orgulho e Preconceito</strong> — Jane Austen</li>
+        <li><strong>Como Eu Era Antes de Você</strong> — Jojo Moyes</li>
+        <li><strong>Amor & Gelato</strong> — Jenna Evans Welch</li>
+      </ul>
+    </section>
+
+    <!-- TERROR -->
+    <section id="terror">
+      <h2 class="titulo">Livros de Terror</h2>
+      <ul>
+        <li><strong>O Iluminado</strong> — Stephen King</li>
+        <li><strong>Coraline</strong> — Neil Gaiman</li>
+        <li><strong>A Assombração da Casa da Colina</strong> — Shirley Jackson</li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Next Book — Feito com 💜 por Mayara Corrêa</p>
+    <p>© 2025 Biblioteca Digital | Desenvolvido para o GitHub Pages</p>
   </footer>
 
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
